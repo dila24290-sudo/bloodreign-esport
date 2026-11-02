@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10090b">
-<title>BLOODREIGN E-SPORT</title>
 
-<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --red: #ed1c24;
+  --dark-red: #9f0710;
+  --black: #080808;
+  --panel: #151515;
+  --white: #ffffff;
+  --muted: #b5b5b5;
+  --border: #303030;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,310 +22,342 @@ html {
 }
 
 body {
-  background: #10090b;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
 header {
-  background: #1b0b10;
-  padding: 18px 12px;
-  text-align: center;
-  border-bottom: 2px solid #b5122b;
-}
-
-.logo {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-header h1 {
-  color: #ff304d;
-  font-size: 25px;
-  margin-top: 8px;
-}
-
-header p {
-  color: #ddd;
-  font-size: 13px;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 7px;
-  padding: 12px 6px;
-  background: #080608;
+  background: #090909;
+  border-bottom: 2px solid var(--red);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
-nav a {
+.navbar {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.brand span {
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 11px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--red);
   color: white;
-  text-decoration: none;
-  background: #281017;
-  border: 1px solid #6e1527;
-  padding: 7px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-nav a:hover {
-  background: #b5122b;
 }
 
 .hero {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
   text-align: center;
-  padding: 55px 15px;
-  background: linear-gradient(135deg, #210811, #10090b, #3b0916);
+  padding: 70px 0;
+  background:
+    radial-gradient(ellipse at center, #381012 0%, #170809 42%, #080808 78%);
+  border-bottom: 1px solid var(--border);
 }
 
-.hero h2 {
-  color: #ff304d;
-  font-size: 30px;
-  margin-bottom: 10px;
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(30px, 6vw, 62px);
+  line-height: 1.2;
+  margin: 18px 0;
+}
+
+.hero h1 span {
+  color: var(--red);
 }
 
 .hero p {
-  color: #ddd;
-  max-width: 600px;
-  margin: auto;
+  max-width: 680px;
+  color: var(--muted);
+  margin: 0 auto 24px;
+}
+
+.eyebrow {
+  color: var(--red);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 12px;
 }
 
 .btn {
   display: inline-block;
-  background: #b5122b;
+  padding: 12px 22px;
+  margin: 5px;
+  background: var(--red);
   color: white;
-  text-decoration: none;
-  padding: 10px 18px;
-  margin-top: 18px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-section {
-  padding: 30px 14px;
-  max-width: 900px;
-  margin: auto;
-  scroll-margin-top: 90px;
-}
-
-section h2 {
-  text-align: center;
-  color: #ff304d;
-  margin-bottom: 18px;
-  font-size: 24px;
-}
-
-.card {
-  background: #1b1115;
-  border: 1px solid #49202b;
-  padding: 16px;
-  margin: 12px 0;
-  border-radius: 9px;
-}
-
-.card h3 {
-  color: #ff657a;
-  margin-bottom: 6px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  width: 100%;
-  max-width: 540px;
-  margin: 0 auto;
-}
-
-.gallery-grid img {
-  display: block;
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border: 1px solid #54202c;
-  border-radius: 7px;
-}
-
-form {
-  max-width: 500px;
-  margin: auto;
-}
-
-input, textarea, select {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #65303d;
-  border-radius: 6px;
-  background: #170e12;
-  color: white;
-  font-size: 15px;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #c5b8bd;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background: #b5122b;
-  color: white;
-  border: 0;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  font-weight: 700;
+  transition: 0.2s;
   cursor: pointer;
 }
 
-.contact {
-  text-align: center;
+.btn:hover {
+  background: transparent;
+  color: var(--red);
 }
 
-.contact a {
-  color: #ff657a;
-  overflow-wrap: anywhere;
+.btn-outline {
+  background: transparent;
+  border-color: #555;
+}
+
+.section {
+  padding: 65px 0;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  margin-bottom: 12px;
+}
+
+.section-title span {
+  color: var(--red);
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.tag {
+  display: inline-block;
+  color: #fff;
+  background: var(--dark-red);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  transition: 0.2s;
+}
+
+.gallery img:hover {
+  border-color: var(--red);
+  transform: scale(1.015);
+}
+
+.coming-soon {
+  border: 1px dashed var(--red);
+  background: #18090a;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.coming-soon h3 {
+  color: var(--red);
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 8px;
+}
+
+.form {
+  display: grid;
+  gap: 15px;
+  max-width: 680px;
+}
+
+.form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #ddd;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 13px;
+  color: white;
+  background: #101010;
+  border: 1px solid #393939;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: 1px solid var(--red);
+  border-color: var(--red);
+}
+
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.notice {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
 }
 
 footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
   text-align: center;
-  background: #080608;
-  color: #aaa;
-  border-top: 1px solid #49202b;
-  padding: 18px 10px;
-  font-size: 12px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-@media (max-width: 600px) {
-  .hero h2 {
-    font-size: 24px;
+footer span {
+  color: var(--red);
+}
+
+.page-banner {
+  padding: 55px 0;
+  background: linear-gradient(110deg, #24090a, #090909 70%);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-banner h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(27px, 5vw, 44px);
+}
+
+.page-banner p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    justify-content: center;
   }
 
-  section {
-    padding: 24px 12px;
+  .brand {
+    justify-content: center;
   }
 
-  .gallery-grid {
-    gap: 5px;
-    max-width: 100%;
+  .nav-links {
+    justify-content: center;
   }
 
-  .gallery-grid img {
-    height: 75px;
-  }
-
-  nav a {
+  .nav-links a {
     font-size: 11px;
-    padding: 6px 8px;
+    padding: 8px;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 50px 0;
+  }
+
+  .section {
+    padding: 45px 0;
   }
 }
-</style>
-</head>
-
-<body>
-
-<header>
-  <img class="logo" src="IMG-20261030-WA0025.jpg"
-       alt="BLOODREIGN E-SPORT Logo">
-  <h1>BLOODREIGN E-SPORT</h1>
-  <p>SRI LANKA • FREE FIRE ESPORTS</p>
-</header>
-
-<nav>
-  <a href="#home">Home</a>
-  <a href="#daily">Daily Tournaments</a>
-  <a href="#lan">LAN Events</a>
-  <a href="#results">Results</a>
-  <a href="#media">Media</a>
-  <a href="#join">Recruitment</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<div class="hero" id="home">
-  <h2>WELCOME TO BLOODREIGN</h2>
-  <p>Compete. Improve. Dominate. Join our Free Fire esports community in Sri Lanka.</p>
-  <a class="btn" href="#daily">Explore Tournaments</a>
-</div>
-
-<section id="daily">
-  <h2>DAILY TOURNAMENTS</h2>
-  <div class="card">
-    <h3>Free Fire Daily Tournament</h3>
-    <p>Check our latest tournament announcements and registration details.</p>
-  </div>
-</section>
-
-<section id="lan">
-  <h2>LAN EVENTS</h2>
-  <div class="card">
-    <h3>Upcoming LAN Events</h3>
-    <p>Stay tuned for upcoming BLOODREIGN E-SPORT LAN events.</p>
-  </div>
-</section>
-
-<section id="results">
-  <h2>TOURNAMENT RESULTS</h2>
-  <div class="card">
-    <h3>Latest Results</h3>
-    <p>Tournament results and team rankings will be published here.</p>
-  </div>
-</section>
-
-<section id="media">
-  <h2>MEDIA GALLERY</h2>
-  <div class="gallery-grid">
-    <img src="FB_IMG_1793102556164.jpg" alt="BLOODREIGN Media 1" loading="lazy">
-    <img src="FB_IMG_1793102683438.jpg" alt="BLOODREIGN Media 2" loading="lazy">
-    <img src="FB_IMG_1793102763858.jpg" alt="BLOODREIGN Media 3" loading="lazy">
-    <img src="FB_IMG_1793102772823.jpg" alt="BLOODREIGN Media 4" loading="lazy">
-    <img src="IMG-20261027-WA0032.jpg" alt="BLOODREIGN Media 5" loading="lazy">
-    <img src="IMG-20261027-WA0033.jpg" alt="BLOODREIGN Media 6" loading="lazy">
-  </div>
-</section>
-
-<section id="join">
-  <h2>PLAYER RECRUITMENT</h2>
-  <div class="card">
-    <p>Want to join BLOODREIGN E-SPORT? Complete the recruitment form below.</p>
-  </div>
-
-  <form action="https://formsubmit.co/bloodreignesport@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="BLOODREIGN E-SPORT Recruitment">
-    <input type="hidden" name="_captcha" value="false">
-
-    <input type="text" name="Player Name" placeholder="Player Name" required>
-    <input type="number" name="Age" placeholder="Age" required>
-    <input type="text" name="Free Fire UID" placeholder="Free Fire UID" required>
-    <input type="text" name="In-game Name" placeholder="In-game Name" required>
-    <input type="text" name="Rank" placeholder="Current Rank" required>
-    <input type="text" name="TikTok or Facebook" placeholder="TikTok / Facebook Link">
-    <textarea name="Message" rows="4" placeholder="Tell us about yourself"></textarea>
-
-    <button type="submit">SUBMIT APPLICATION</button>
-  </form>
-</section>
-
-<section id="contact" class="contact">
-  <h2>CONTACT US</h2>
-  <div class="card">
-    <p><strong>BLOODREIGN E-SPORT</strong></p>
-    <p>Email: <a href="mailto:bloodreignesport@gmail.com">bloodreignesport@gmail.com</a></p>
-    <p>Sri Lanka</p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 BLOODREIGN E-SPORT. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
