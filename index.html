@@ -1,363 +1,104 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="BLOODREIGN E-SPORT Sri Lanka - Free Fire Esports, tournaments and LAN events.">
+  <title>BLOODREIGN E-SPORT | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-:root {
-  --red: #ed1c24;
-  --dark-red: #9f0710;
-  --black: #080808;
-  --panel: #151515;
-  --white: #ffffff;
-  --muted: #b5b5b5;
-  --border: #303030;
-}
+<header>
+  <div class="container navbar">
+    <a href="index.html" class="brand">
+      <img src="IMG-20261030-WA0025.jpg" alt="BLOODREIGN Logo">
+      <div>BLOODREIGN <span>E-SPORT</span></div>
+    </a>
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    <nav class="nav-links">
+      <a href="index.html" class="active">HOME</a>
+      <a href="daily.html">DAILY</a>
+      <a href="lan.html">LAN EVENTS</a>
+      <a href="results.html">RESULTS</a>
+      <a href="recruitment.html">JOIN US</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </div>
+</header>
 
-html {
-  scroll-behavior: smooth;
-}
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">SRI LANKA • FREE FIRE ESPORTS</p>
+      <h1>WELCOME TO<br><span>BLOODREIGN E-SPORT</span></h1>
+      <p>
+        One Team. One Dream. One Reign.
+        Join our esports community and be part of the next generation
+        of competitive Free Fire.
+      </p>
+      <a href="daily.html" class="btn">VIEW TOURNAMENTS</a>
+      <a href="recruitment.html" class="btn btn-outline">JOIN OUR TEAM</a>
+    </div>
+  </section>
 
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-}
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">WHAT WE DO</p>
+      <h2 class="section-title">OUR <span>ACTIVITIES</span></h2>
+      <p class="section-intro">
+        Explore BLOODREIGN E-SPORT tournaments, events and team updates.
+      </p>
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+      <div class="cards">
+        <a href="daily.html" class="card">
+          <span class="tag">TOURNAMENTS</span>
+          <h3>Daily Tournaments</h3>
+          <p>Check our daily tournament announcements and updates.</p>
+        </a>
 
-img {
-  display: block;
-  max-width: 100%;
-}
+        <a href="lan.html" class="card">
+          <span class="tag">LIVE EVENTS</span>
+          <h3>LAN Events & Media</h3>
+          <p>Explore our LAN events, event photos and highlights.</p>
+        </a>
 
-.container {
-  width: min(1120px, 92%);
-  margin: auto;
-}
+        <a href="results.html" class="card">
+          <span class="tag">RANKINGS</span>
+          <h3>Tournament Results</h3>
+          <p>See tournament placements and match results.</p>
+        </a>
 
-header {
-  background: #090909;
-  border-bottom: 2px solid var(--red);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+        <a href="recruitment.html" class="card">
+          <span class="tag">RECRUITMENT</span>
+          <h3>Join BLOODREIGN</h3>
+          <p>Apply to join our team and become part of our community.</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-.navbar {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 12px 0;
-}
+  <section class="section" style="background:#101010">
+    <div class="container">
+      <p class="eyebrow">OUR MISSION</p>
+      <h2 class="section-title">RISE WITH <span>BLOODREIGN</span></h2>
+      <p class="section-intro">
+        Building a competitive esports community in Sri Lanka through
+        teamwork, dedication and fair play.
+      </p>
+      <a href="contact.html" class="btn">CONTACT US</a>
+    </div>
+  </section>
+</main>
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 800;
-  color: var(--white);
-}
+<footer>
+  <div class="container">
+    <p>© 2026 <span>BLOODREIGN E-SPORT</span>. All rights reserved.</p>
+    <p>Sri Lanka • Free Fire Esports</p>
+  </div>
+</footer>
 
-.brand img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-}
-
-.brand span {
-  color: var(--red);
-}
-
-.nav-links {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.nav-links a {
-  font-size: 13px;
-  font-weight: 700;
-  padding: 9px 11px;
-  border-radius: 5px;
-  transition: 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background: var(--red);
-  color: white;
-}
-
-.hero {
-  min-height: 440px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 70px 0;
-  background:
-    radial-gradient(ellipse at center, #381012 0%, #170809 42%, #080808 78%);
-  border-bottom: 1px solid var(--border);
-}
-
-.hero h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(30px, 6vw, 62px);
-  line-height: 1.2;
-  margin: 18px 0;
-}
-
-.hero h1 span {
-  color: var(--red);
-}
-
-.hero p {
-  max-width: 680px;
-  color: var(--muted);
-  margin: 0 auto 24px;
-}
-
-.eyebrow {
-  color: var(--red);
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  letter-spacing: 3px;
-  font-size: 12px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  margin: 5px;
-  background: var(--red);
-  color: white;
-  border: 1px solid var(--red);
-  border-radius: 4px;
-  font-weight: 700;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: transparent;
-  color: var(--red);
-}
-
-.btn-outline {
-  background: transparent;
-  border-color: #555;
-}
-
-.section {
-  padding: 65px 0;
-}
-
-.section-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(24px, 4vw, 36px);
-  margin-bottom: 12px;
-}
-
-.section-title span {
-  color: var(--red);
-}
-
-.section-intro {
-  color: var(--muted);
-  margin-bottom: 30px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px;
-  transition: 0.2s;
-  overflow: hidden;
-}
-
-.card:hover {
-  border-color: var(--red);
-  transform: translateY(-3px);
-}
-
-.card h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 17px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-.tag {
-  display: inline-block;
-  color: #fff;
-  background: var(--dark-red);
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  gap: 16px;
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  transition: 0.2s;
-}
-
-.gallery img:hover {
-  border-color: var(--red);
-  transform: scale(1.015);
-}
-
-.coming-soon {
-  border: 1px dashed var(--red);
-  background: #18090a;
-  padding: 30px 20px;
-  text-align: center;
-  border-radius: 8px;
-  margin-top: 25px;
-}
-
-.coming-soon h3 {
-  color: var(--red);
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 8px;
-}
-
-.form {
-  display: grid;
-  gap: 15px;
-  max-width: 680px;
-}
-
-.form label {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 6px;
-  color: #ddd;
-}
-
-.form input,
-.form select,
-.form textarea {
-  width: 100%;
-  padding: 13px;
-  color: white;
-  background: #101010;
-  border: 1px solid #393939;
-  border-radius: 4px;
-  font: inherit;
-}
-
-.form input:focus,
-.form select:focus,
-.form textarea:focus {
-  outline: 1px solid var(--red);
-  border-color: var(--red);
-}
-
-.form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.notice {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 12px;
-}
-
-footer {
-  padding: 28px 0;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-footer span {
-  color: var(--red);
-}
-
-.page-banner {
-  padding: 55px 0;
-  background: linear-gradient(110deg, #24090a, #090909 70%);
-  border-bottom: 1px solid var(--border);
-}
-
-.page-banner h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(27px, 5vw, 44px);
-}
-
-.page-banner p {
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-@media (max-width: 650px) {
-  .navbar {
-    justify-content: center;
-  }
-
-  .brand {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-  }
-
-  .nav-links a {
-    font-size: 11px;
-    padding: 8px;
-  }
-
-  .hero {
-    min-height: 360px;
-    padding: 50px 0;
-  }
-
-  .section {
-    padding: 45px 0;
-  }
-}
+</body>
+</html>
